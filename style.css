@@ -1,0 +1,27 @@
+
+#button {
+    margin-left: 10px ;
+    background-color: black;
+    color: white;
+}
+
+#search {
+    display: block;
+    border: 2px solid black;
+}
+#loader {
+    display: block;
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#output {
+    display: grid;
+    justify-content: center;
+}
