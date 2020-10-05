@@ -15,7 +15,7 @@
     border: 2px solid black;
 }
 
-.form {
+#form {
     display: flex;
     justify-content: center;
     margin: 20px 0;

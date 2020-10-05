@@ -5,6 +5,12 @@ const GIF_LIMIT = 5;
 const searchInput = document.getElementById('search');
 const output = document.getElementById('output');
 const loader = document.getElementById('loader');
+const form = document.getElementById('form');
+form.addEventListener('submit', function(event) { 
+ event.preventDefault();
+    console.log(form);
+
+});
 
 const turnOnLoader = () => {
     loader.style.display = "block";
@@ -15,7 +21,7 @@ const turnOffLoader = () => {
 }
 
 const debounce = (fn, timeout) => {
-    let timex = null;
+    let timer = null;
     return(...args) => {
         clearTimeout(timer);
 
@@ -44,7 +50,7 @@ const searchGifs = (search) => {
     return fetch(`${API_ENDPOINT}search?api_key=${API_KEY}&limit=${GIF_LIMIT}&q=${search}`)
         .then(res => res.json())
         .then(res => res.data)
-        .finnaly(() => {
+        searchGifs.finnaly(() => {
             turnOffLoader();
         })
 };
@@ -67,7 +73,7 @@ searchInput.addEventListener('input', (e) => {
     if(!value) {
     getTrendingGifs().then(renderGifs);
     return;
-}
+};
 
 searchGifs(value).then(renderGifs);
 });
